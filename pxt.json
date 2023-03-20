@@ -1,5 +1,5 @@
 {
-    "name": "activity picker",
+    "name": "fluid question picker",
     "description": "",
     "dependencies": {
         "core": "*",

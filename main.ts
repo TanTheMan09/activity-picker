@@ -1,14 +1,21 @@
-input.onButtonPressed(Button.A, function () {
-    choice = randint(0, options.length - 1)
-    basic.showString("" + (options[choice]))
-})
 let choice = 0
-let options: string[] = []
-options = [
-"\"play video games",
-"watch a movie",
-"play a board game",
-"tidy our rooms",
-"Practice your instrument",
-"Study"
+let questions = [
+"What is a fluid?",
+"What is viscosity?",
+"What is the density of pure gold?",
+"True or False D=M/V",
+"What is more viscous oil or water?",
+"What is the density of water?"
 ]
+basic.forever(function () {
+    if (input.buttonIsPressed(Button.B)) {
+        led.stopAnimation()
+        choice = randint(0, 5)
+    }
+})
+basic.forever(function () {
+    if (input.buttonIsPressed(Button.A)) {
+        choice = randint(0, 5)
+        basic.showString("" + (questions[choice]))
+    }
+})
