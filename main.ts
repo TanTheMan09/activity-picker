@@ -1,4 +1,10 @@
-input.onButtonPressed(Button.AB, function () {
+input.onButtonPressed(Button.A, function () {
+    music.playMelody("A G F E D E F E ", 150)
+    if (input.buttonIsPressed(Button.B)) {
+        music.stopAllSounds()
+    }
+})
+input.onGesture(Gesture.Shake, function () {
     Hard_Questions = ["Qu'est-ce que le principe de Pascal?", "Citez les 6 règles de la théorie des particules", "Quelle est la densité du fer?"]
 })
 let choice_2 = 0
@@ -15,18 +21,19 @@ let questions = [
 basic.forever(function () {
     if (input.buttonIsPressed(Button.B)) {
         led.stopAnimation()
-        choice = randint(0, 5)
-    }
-})
-basic.forever(function () {
-    if (input.buttonIsPressed(Button.AB)) {
-        choice_2 = randint(0, 2)
-        basic.showString("" + (Hard_Questions[choice_2]))
+        music.stopAllSounds()
+        music.stopMelody(MelodyStopOptions.All)
     }
 })
 basic.forever(function () {
     if (input.buttonIsPressed(Button.A)) {
         choice = randint(0, 5)
         basic.showString("" + (questions[choice]))
+    }
+})
+basic.forever(function () {
+    if (input.isGesture(Gesture.Shake)) {
+        choice_2 = randint(0, 2)
+        basic.showString("" + (Hard_Questions[choice_2]))
     }
 })
