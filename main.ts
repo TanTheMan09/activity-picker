@@ -1,11 +1,11 @@
 let choice = 0
 let questions = [
-"What is a fluid?",
-"What is viscosity?",
-"What is the density of pure gold?",
-"True or False D=M/V",
-"What is more viscous oil or water?",
-"What is the density of water?"
+"Qu'est-ce qu'un fluide?",
+"Qu'est-ce que la viscosité?",
+"Quelle est la densité de l'or pur?",
+"Vrai ou faux D=M/V",
+"Qu'est-ce qui est le plus visqueux : l'huile ou l'eau?",
+"Quelle est la densité de l'eau?"
 ]
 basic.forever(function () {
     if (input.buttonIsPressed(Button.B)) {
